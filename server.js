@@ -7,6 +7,8 @@ import eventRoutes from "./routes/eventRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 
 import trainerRoutes from "./routes/trainerRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+
 
 
 // Load env variables
@@ -23,6 +25,7 @@ app.use(express.json());
 app.use("/api/reviews", reviewRoutes); // ✅ FIXED (NO require)
 app.use("/api/events", eventRoutes);
 app.use('/api/trainers', trainerRoutes);
+app.use("/api/user", authRoutes)
 
 
 // =======================
@@ -78,7 +81,7 @@ mongoose
 // =======================
 // Start Server
 // =======================
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(8000, () => {
+  console.log(`Server running on port ${8000}`);
 });
 
